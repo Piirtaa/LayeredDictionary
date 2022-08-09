@@ -32,7 +32,7 @@
 #what is the utility of this paradigm?
 #	- having immutable values of data that you can tie to particular stages of mutation is useful for performing rollbacks and for knowing at what stage a value was mutated.
 #	- in a workflow it is often desireable for data gathered during a prior step to be available during later steps but to not be settable.  
-#		- the analogy of a book where every time a chapter is written it can be re-referenced but not changed during the writing of the next chapter.  
+#		- the analogy of a book where every time a new chapter is written it can reference the prior chapters but changing the priors could be incompatible with the addition.  
 #		- for example.  one has some ui functionality where there is a sequence of nested dialogs that have to be completed.  this will mutate some larger "unit of work" state
 #			at each step.  being able to rollback state to a particular step of that workflow would be useful.  the immutable audit history of a key gives this guarantee.
 
