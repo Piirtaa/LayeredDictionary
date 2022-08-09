@@ -4,12 +4,12 @@
 #
 #	. path/to/ld.sh				#step 1. load the functions up
 #	declare -A myLD  			#step 2. declare a bash dictionary as the underlying data store for the ld.sh functionality
-#								#step 3. use the functionality as in the examples below
+#						#step 3. use the functionality as in the examples below
 #	ld myLD set key value 			#sets the key value
-#	ld myLD get key					#gets the key value (returned to std out)
+#	ld myLD get key				#gets the key value (returned to std out)
 #	ld myLD get key myValueVar 		#gets the key value and sets myValueVar to that value.  nothing is echoed back.
-#	ld myLD increment				#increments the current step.  
-#	ld myLD rollback 3				#rolls the state of the dictionary back to step 3, removing any mutations that happened after this.  and resets the current step to 3.
+#	ld myLD increment			#increments the current step.  
+#	ld myLD rollback 3			#rolls the state of the dictionary back to step 3, removing any mutations that happened after this.  and resets the current step to 3.
 #	ld myLD laststep key			#gets the last step the key was mutated on
 
 #the underlying design concept:
@@ -37,10 +37,10 @@
 #			at each step.  being able to rollback state to a particular step of that workflow would be useful.  the immutable audit history of a key gives this guarantee.
 
 #usage:	ld myLD set key value 			#sets the key value
-#usage:	ld myLD get key					#gets the key value (returned to std out)
+#usage:	ld myLD get key				#gets the key value (returned to std out)
 #usage:	ld myLD get key myValueVar 		#gets the key value and sets myValueVar to that value.  nothing is echoed back.
-#usage:	ld myLD increment				#increments the current step.  
-#usage:	ld myLD rollback 3				#rolls the state of the dictionary back to step 3, removing any mutations that happened after this.  and resets the current step to 3.
+#usage:	ld myLD increment			#increments the current step.  
+#usage:	ld myLD rollback 3			rolls the state of the dictionary back to step 3, removing any mutations that happened after this.  and resets the current step to 3.
 #usage:	ld myLD laststep key			#gets the last step the key was mutated on
 ld()
 {
