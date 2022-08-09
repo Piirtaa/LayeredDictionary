@@ -138,7 +138,7 @@ ld()
 			fi
 		done
 		
-		#remove them and re-add them with the stepped key
+		#remove them 
 		for KEY in "${DELKEYS[@]}"; do
 			unset LD[$KEY]
 		done
